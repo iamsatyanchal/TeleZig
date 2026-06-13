@@ -21,3 +21,8 @@ pub const Message = struct {
     text: ?[]const u8,
     date: i64, // unix timestamp
 };
+
+pub const Update = struct {
+    update_id: i64,
+    message: ?Message, //updated msg will also be a msg so Message struct :)
+};
