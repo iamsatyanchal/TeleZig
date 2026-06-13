@@ -27,6 +27,22 @@ pub const Telebot = struct {
     pub fn getMe(self: Telebot) !void {
         const url = try std.fmt.allocPrint(self.allocator, "{s}/getMe", .{self.tg_base_url});
         defer self.allocator.free(url);
+        var fetch = std.http.Client{ .allocator = self.allocator };
+        defer fetch.deinit();
+        const url_parsed = try std.Uri.parse(url);
+
+        var fuckwhatisthis: [4096]u8 = undefined;
+        // var buffer[1024]u8 = undefined; // buffer to store the response
+
         show("Calling URL: {s}\n", .{url}); // checking the url
+        var request = try fetch.open(.GET, url_parsed, .{ .server_header_buffer = &fuckwhatisthis });
+
+        try request.send();
+        try request.finish();
+        try request.wait();
+
+        show("Request opened successfully!\n {any}", .{request});
+
+        defer request.deinit();
     }
 };
