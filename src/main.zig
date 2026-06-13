@@ -10,7 +10,7 @@ pub fn main() !void {
 
     const allocator = gpa.allocator();
 
-    var bot = try telegram.Telebot.init(allocator, "bottoken hogaa");
+    var bot = try telegram.Telebot.init(allocator, "YOUR_BOT_TOKEN");
     defer bot.deinit();
     show("Bot initialized successfully! {s}\n", .{bot.tg_base_url});
     try bot.getMe();

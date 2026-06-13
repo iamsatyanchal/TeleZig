@@ -35,13 +35,15 @@ pub const Telebot = struct {
         // var buffer[1024]u8 = undefined; // buffer to store the response
 
         show("Calling URL: {s}\n", .{url}); // checking the url
-        var request = try fetch.open(.GET, url_parsed, .{ .server_header_buffer = &fuckwhatisthis });
+        var request = try fetch.open(.GET, url_parsed, .{ .server_header_buffer = &fuckwhatisthis }); // sending the request and this is how to do a get request :/ tf
 
         try request.send();
         try request.finish();
         try request.wait();
 
-        show("Request opened successfully!\n {any}", .{request});
+        const body = try request.reader().readAllAlloc(self.allocator, 8196);
+        defer self.allocator.free(body);
+        show("Request opened successfully\n{s}\n", .{body});
 
         defer request.deinit();
     }
