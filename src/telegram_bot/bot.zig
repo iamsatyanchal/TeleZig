@@ -33,7 +33,6 @@ pub const Telebot = struct {
 
         var trace_data_for_header: [4096]u8 = undefined;
         // var buffer[1024]u8 = undefined; // buffer to store the response
-
         // show("Calling URL: {s}\n", .{url}); // checking the url
         var request = try fetch.open(.GET, url_parsed, .{ .server_header_buffer = &trace_data_for_header }); // sending the request and this is how to do a get request :/ tf
 

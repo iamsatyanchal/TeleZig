@@ -1,3 +1,4 @@
+![TeleZig](TeleZig_icon.png)
 # TeleZig
 
 TeleZig is a terminal based Telegram bot tool written in Zig. It currently supports only bot information lookup and sending messages from the command line.
