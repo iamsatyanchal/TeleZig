@@ -38,3 +38,8 @@ This will build and run the terminal app directly.
 3. The app calls Telegram's `getMe` endpoint to fetch bot information.
 4. You enter a chat ID and a message in the format `chat_id ~ message`.
 5. The app sends the message using Telegram's `sendMessage` endpoint.
+
+## Screenshots
+![](https://user-cdn.hackclub-assets.com/019ec68c-08f2-7748-b300-923f404831c5/screenshot-1781447526488-1.png)
+![](https://cdn.hackclub.com/019ec67f-d7aa-782b-8e72-fa2f0d6b8ec3/screenshot-1781446726767-1.png)
+![](https://cdn.hackclub.com/019ec67f-dae2-72ef-903d-2c5e863ee50b/screenshot-1781446727819-2.png)
