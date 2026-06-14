@@ -1,4 +1,7 @@
+// will use this file in future.. right now im learning other things :/
+
 const std = @import("std");
+const memory = std.mem;
 
 pub const User = struct {
     id: i64,
